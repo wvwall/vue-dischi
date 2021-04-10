@@ -12,7 +12,7 @@
     margin:  20px;
 	-webkit-transform-style:preserve-3d;
 	transform-style:preserve-3d;
-    border-radius: 5px;
+    
 }
 #root{
 	-webkit-perspective:1000;
@@ -25,9 +25,23 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    background-image: linear-gradient(to right top, #1ad260, #00cd91, #00c4b6, #00b9ca, #00acce, #06a4d7, #369add, #5c8edc, #967ed7, #c768bf, #e85295, #f34a61);
+    background-image: linear-gradient(to left top,
+     #1ad260, #00bda0, #00a1ce,
+     #0080d8, #0058b8, #4745a9, 
+     #642e95, #76047c, #a00074,
+      #c30066, #df0053, #f2243b);
+   /*  background-image: linear-gradient(to right bottom, 
+    #1ad260, #00c9aa, #00b9ec,
+     #00a0ff, #007bff, #6465f6,
+     #9247e4, #b500c9, #d600ad,
+      #ea1093, #f3387e, #f5566e); */
+   /*  background-image: linear-gradient(to right top,
+     #1ad260, #00cd91, #00c4b6,
+      #00b9ca, #00acce, #06a4d7,
+     #369add, #5c8edc, #967ed7,
+      #c768bf, #e85295, #f34a61); */
 }
 .front, .back{
 	width:100%;
@@ -35,17 +49,22 @@
 	position:absolute;
 	-webkit-backface-visibility:hidden;
 	backface-visibility:hidden;
-	-webkit-transition:-webkit-transform 1000ms;
-	transition:-webkit-transform 1000ms;
-	transition:transform 1000ms;
-	transition:transform 1000ms, -webkit-transform 1000ms;
+	-webkit-transition:-webkit-transform 800ms;
+	transition:-webkit-transform 800ms;
+	transition:transform 800ms;
+	transition:transform 800ms, -webkit-transform 1000ms;
 	-webkit-transition-timing-function:ease-out;
 	transition-timing-function:ease-out;
 	-webkit-transform-origin:center center;
 	transform-origin:center center;
-    border-radius: 8px;
-    box-shadow: rgba(240, 240, 240, 0.1) 0px 0px 4px 0px,
-    rgba(240, 240, 240, 0.2) 0px 8px 16px 0px;
+    border-radius: 2px;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
 }
 .card .front{
 	width: 200px;
@@ -55,7 +74,7 @@
 	transform:rotateY(0deg);
 }
 .card .back{
-	background:#102027;
+	background:#1b0000;
 	-webkit-transform:rotateY(180deg);
 	transform:rotateY(180deg);
 }
@@ -67,29 +86,34 @@
     text-align: center;
     justify-content: center;
     text-transform: uppercase;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .info i {
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
 }
 
 .info i {
     color: #fff;
+    
 }
 .spoty {
     background-color:#1AD260;
 }
 .apple {
-    background-color: #F34A61;
+    background: linear-gradient(to bottom,#F5566E,#F2243B);
 }
 .amaz {
-    background-color: #109AC3;
+    background: linear-gradient(to bottom,#4201F7,#2E1D7A);
 }
 .card-icon span {
-    width: 50px;
+    width: 40px;
+    height: 40px;
     padding: 5px;
-    border-radius: 4px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .card-icon {
     display: flex;
@@ -113,7 +137,19 @@
 }
 
 #select {
-    position: absolute;
+    width: 100%;
     text-transform: uppercase;
-    top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+select {
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.4));
+    width: 80px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
 }

@@ -16,16 +16,12 @@
 <body>
     <div id="root">
         <div id="select" >
-            <label for="cars">musical genre</label>
-             <select name="album" id="album">
-                <option value="rock">rock</option>
-                <option value="pop">pop</option>
-                <option value="jazz">jazz</option>
-                <option value="metal">metal</option>
+             <select v-model="select" @click="selectGenre" id="album">
+                <option >All</option>
+                <option v-for="genre in albumsGenre">{{genre}}</option>
              </select> 
         </div>
-        
-        <div class="card" v-for="album in albums">
+        <div class="card" v-for="album in albums" v-if="album.genre == select || select === 'All'">
             <div class="front" :style="`background-image: url('${album.poster}')`">  
             </div>
             <div class="back">
