@@ -15,6 +15,16 @@
 </head>
 <body>
     <div id="root">
+        <div id="select" >
+            <label for="cars">musical genre</label>
+             <select name="album" id="album">
+                <option value="rock">rock</option>
+                <option value="pop">pop</option>
+                <option value="jazz">jazz</option>
+                <option value="metal">metal</option>
+             </select> 
+        </div>
+        
         <div class="card" v-for="album in albums">
             <div class="front" :style="`background-image: url('${album.poster}')`">  
             </div>
@@ -29,7 +39,6 @@
                         <span class="spoty"><a href="https://www.spotify.com/it/home/" target="_blank"><i class="fab fa-spotify"></i></a></span>
                         <span class="amaz"><a href="https://music.amazon.it/?"  target="_blank"><i class="fab fa-amazon" ></i></a></span>
                     </div>
-                    
                 </div>
             </div>
         </div>
