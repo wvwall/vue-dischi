@@ -18,14 +18,20 @@
 </head>
 <body>
     <div id="root">
-        <div id="select" >
+
+        <!-- NAVBAR -->
+
+        <div id="nav" >
             <img src="./assets/img/channels4_profile.jpg" alt="">
             <h1>vinyls</h1>
-             <select v-model="select" @click="selectGenre" id="album">
+            <select v-model="select" @click="selectGenre" id="album">
                 <option >All</option>
                 <option v-for="genre in albumsGenre">{{genre}}</option>
              </select> 
         </div>
+
+        <!-- CARDS -->
+
         <div class="card" v-for="album in albums" v-if="album.genre == select || select === 'All'">
             <div class="front" :style="`background-image: url('${album.poster}')`">  
             </div>
@@ -45,6 +51,10 @@
         </div>
     </div>
 
+
+
+    <!-- SCRIPT -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
     <script src='https://cdn.jsdelivr.net/npm/vue'></script>
     <script src="./assets/js/main.js"></script>

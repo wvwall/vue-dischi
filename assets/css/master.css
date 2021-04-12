@@ -151,7 +151,7 @@
 	transform:rotateY(0deg);
 }
 
-#select {
+#nav {
     width: 100%;
     height: 70px;
     background-color: rgba(0, 0, 0, 0.22);
@@ -160,7 +160,7 @@
     justify-content: space-around;
     align-items: center;
 }
-#select img {
+#nav img {
     height: 50px;
     border-radius: 50%;
 }
@@ -178,7 +178,7 @@ select {
     font-weight: 600;
     font-size: 14px;
 }
- #select h1 {
+ #nav h1 {
      color:#fff;
      text-transform: lowercase;
      font-family: 'Train One', cursive;
