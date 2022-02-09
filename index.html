@@ -1,62 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Train+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
     <title>vue-dischi</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/master.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/css/master.css" />
+  </head>
+  <body>
     <div id="root">
+      <!-- NAVBAR -->
 
-        <!-- NAVBAR -->
+      <div id="nav">
+        <img src="./assets/img/channels4_profile.jpg" alt="" />
+        <h1>vinyls</h1>
+        <select v-model="select" @click="selectGenre" id="album">
+          <option>All</option>
+          <option v-for="genre in albumsGenre">{{genre}}</option>
+        </select>
+      </div>
 
-        <div id="nav" >
-            <img src="./assets/img/channels4_profile.jpg" alt="">
-            <h1>vinyls</h1>
-            <select v-model="select" @click="selectGenre" id="album">
-                <option >All</option>
-                <option v-for="genre in albumsGenre">{{genre}}</option>
-             </select> 
-        </div>
+      <!-- CARDS -->
 
-        <!-- CARDS -->
-
-        <div class="card" v-for="album in albums" v-if="album.genre == select || select === 'All'">
-            <div class="front" :style="`background-image: url('${album.poster}')`">  
+      <div
+        class="card"
+        v-for="album in albums"
+        v-if="album.genre == select || select === 'All'"
+      >
+        <div
+          class="front"
+          :style="`background-image: url('${album.poster}')`"
+        ></div>
+        <div class="back">
+          <div class="info">
+            <span class="title">{{ album.title }}</span>
+            <span class="year">{{ album.year }}</span>
+            <span class="author">{{ album.author }}</span>
+            <span class="genre">{{ album.genre }}</span>
+            <div class="card-icon">
+              <span class="apple"
+                ><a
+                  href="https://music.apple.com/it/genre/musica/id34"
+                  target="_blank"
+                  ><i class="fab fa-apple"></i></a
+              ></span>
+              <span class="spoty"
+                ><a href="https://www.spotify.com/it/home/" target="_blank"
+                  ><i class="fab fa-spotify"></i></a
+              ></span>
+              <span class="amaz"
+                ><a href="https://music.amazon.it/?" target="_blank"
+                  ><i class="fab fa-amazon"></i></a
+              ></span>
             </div>
-            <div class="back" >
-                <div class="info">
-                    <span class="title">{{ album.title }}</span>
-                    <span class="year">{{ album.year }}</span>
-                    <span class="author">{{ album.author }}</span>
-                    <span class="genre">{{ album.genre }}</span>
-                    <div class="card-icon">
-                        <span class="apple"><a href="https://music.apple.com/it/genre/musica/id34" target="_blank"><i class="fab fa-apple"></i></a></span>
-                        <span class="spoty"><a href="https://www.spotify.com/it/home/" target="_blank"><i class="fab fa-spotify"></i></a></span>
-                        <span class="amaz"><a href="https://music.amazon.it/?"  target="_blank"><i class="fab fa-amazon" ></i></a></span>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
 
-
-
     <!-- SCRIPT -->
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
-    <script src='https://cdn.jsdelivr.net/npm/vue'></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
+      charset="utf-8"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script src="./assets/js/main.js"></script>
-</body>
+  </body>
 </html>
